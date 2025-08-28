@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Comunicação no Trabalho - A Agressão Entre Colegas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #EDEDED 0%, #CEA2FD 100%);
+            color: #111111;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .stat-card {
+            background-color: #EDEDED;
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #FF460A;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .big-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #FF460A;
+        }
+        .text-muted {
+            color: #444444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto p-4 md:p-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold main-title mb-4">Comunicação no Trabalho: A Agressão Entre Colegas</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto">Uma análise visual de como a incivilidade entre pares impacta o ambiente profissional, apesar da auto-percepção positiva da maioria.</p>
+        </header>
+        <main>
+            <section id="perception-gap" class="mb-16">
+                <h2 class="text-3xl font-bold text-center section-title mb-8">O Paradoxo da Auto-Percepção</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10">A grande maioria dos profissionais se vê como comunicadores assertivos. No entanto, os dados sobre o que as pessoas vivenciam no dia a dia contam uma história muito diferente, especialmente na interação com colegas.</p>
+                <div class="stat-card">
+                    <h3 class="text-xl font-bold section-title mb-4 text-center">Como os Profissionais se Identificam</h3>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="selfPerceptionChart"></canvas>
+                    </div>
+                     <p class="mt-4 text-center text-muted">Mais de 75% se consideram assertivos, enquanto estilos disfuncionais representam uma minoria na autoavaliação.</p>
+                </div>
+            </section>
+            
+            <section id="passive-agressive-reality" class="mb-16">
+                <h2 class="text-3xl font-bold text-center section-title mb-8">A Realidade da Agressão Velada</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10">Apesar da autoimagem positiva, a hostilidade indireta é uma epidemia. Comportamentos passivo-agressivos são frequentes, reconhecidos como um problema e minam a colaboração diariamente.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="stat-card text-center">
+                        <p class="big-number">69%</p>
+                        <p class="text-xl font-semibold mt-4">consideram a comunicação passivo-agressiva um problema.</p>
+                        <p class="mt-2 text-muted">A maioria reconhece o impacto negativo de comportamentos como sarcasmo e sabotagem sutil.</p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="big-number">64%</p>
+                        <p class="text-xl font-semibold mt-4">presenciam esses atos semanalmente.</p>
+                        <p class="mt-2 text-muted">Este tipo de comunicação tóxica não é um evento raro, mas uma ocorrência frequente.</p>
+                    </div>
+                    <div class="stat-card text-center">
+                        <p class="big-number">85%</p>
+                        <p class="text-xl font-semibold mt-4">dos profissionais consideram que têm colegas de trabalho agressivos.</p>
+                        <p class="mt-2 text-muted">A incivilidade entre pares é uma experiência quase universal no ambiente de trabalho.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="peer-incivility" class="mb-16">
+                <h2 class="text-3xl font-bold text-center section-title mb-8">Incivilidade Entre Pares: A Fonte do Conflito</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10">A falta de respeito e a grosseria vindas diretamente de colegas são extremamente prevalentes, superando até mesmo a que vem da liderança em alguns setores.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="stat-card">
+                        <h3 class="text-xl font-bold section-title mb-4 text-center">Fonte da Incivilidade na Enfermagem</h3>
+                        <p class="text-sm text-muted mb-4 text-center">No setor de enfermagem, um ambiente de alta pressão, a incivilidade vinda de colegas (77,6%) é mais frequente que a vinda de supervisores (67,5%).</p>
+                        <div class="chart-container h-80">
+                            <canvas id="incivilityChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="text-xl font-bold section-title mb-4 text-center">Como os Colegas Reagem à Incivilidade</h3>
+                        <p class="text-sm text-muted mb-4 text-center">As reações variam, mas uma parcela significativa responde de forma a perpetuar o ciclo de toxicidade, optando por táticas passivo-agressivas.</p>
+                        <div class="chart-container h-80">
+                            <canvas id="reactionsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact" class="mb-16">
+                <h2 class="text-3xl font-bold text-center section-title mb-8">O Custo Humano e Operacional</h2>
+                <p class="text-center max-w-2xl mx-auto mb-10">A comunicação tóxica entre pares não afeta apenas o clima; ela gera estresse, prejudica a entrega de resultados e contribui para uma crise de saúde mental.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="stat-card">
+                        <h3 class="text-xl font-bold section-title mb-4 text-center">Consequências Diretas da Falha de Comunicação</h3>
+                        <p class="text-sm text-muted mb-4 text-center">O estresse é a consequência mais sentida, seguida de perto por falhas e atrasos que impactam diretamente o negócio.</p>
+                        <div class="chart-container h-80">
+                            <canvas id="consequencesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 class="text-xl font-bold section-title mb-4 text-center">A Cultura do Silêncio</h3>
+                        <p class="text-sm text-muted mb-4 text-center">O medo de consequências ou a sensação de que é inútil falar criam um ambiente onde 85% dos colaboradores não se sentem seguros para se expressar.</p>
+                        <div class="chart-container h-80">
+                            <canvas id="employeeSilenceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="text-center mt-16 border-t border-gray-400 pt-8">
+            <p class="text-muted">A lacuna entre a intenção e o impacto da nossa comunicação define a saúde do ambiente de trabalho, especialmente entre colegas.</p>
+            <p class="text-sm text-muted opacity-75 mt-2">Infográfico gerado com base em pesquisas sobre estilos de comunicação e incivilidade no trabalho.</p>
+        </footer>
+    </div>
+    <script>
+        const chartPalette = {
+            blue: '#3B82F6',
+            green: '#10B981',
+            yellow: '#FBBF24',
+            orange: '#F97316',
+            red: '#EF4444',
+            darkRed: '#DC2626',
+            gray: '#6B7280'
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + words[i].length + 1 < maxWidth) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+        const defaultChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                     labels: {
+                        font: {
+                            family: "'Inter', sans-serif",
+                            size: 14,
+                        },
+                        color: '#111111'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback,
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed !== null) {
+                                label += context.parsed + '%';
+                            }
+                            return label;
+                        }
+                    },
+                    bodyFont: {
+                        family: "'Inter', sans-serif",
+                    },
+                    titleFont: {
+                        family: "'Inter', sans-serif",
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('selfPerceptionChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Assertiva', 'Passiva', 'Passivo-Agressiva', 'Agressiva'],
+                datasets: [{
+                    label: 'Distribuição Percentual',
+                    data: [75.3, 10.5, 9.6, 4.6],
+                    backgroundColor: [
+                        chartPalette.blue,
+                        chartPalette.yellow,
+                        chartPalette.orange,
+                        chartPalette.red
+                    ],
+                    borderColor: '#EDEDED',
+                    borderWidth: 4
+                }]
+            },
+            options: { ...defaultChartOptions }
+        });
+        
+        new Chart(document.getElementById('incivilityChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Incivilidade por Colegas', 'Incivilidade por Supervisores'],
+                datasets: [{
+                    label: '% dos Profissionais que Sofreram',
+                    data: [77.6, 67.5],
+                    backgroundColor: [
+                        chartPalette.darkRed,
+                        chartPalette.orange
+                    ],
+                    borderRadius: 4,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                indexAxis: 'y',
+                 plugins: { ...defaultChartOptions.plugins, legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: '#111111' }, beginAtZero: true, max: 100, grid: { display: false } },
+                    y: { ticks: { color: '#111111' }, grid: { display: false } }
+                }
+            }
+        });
+        
+        const reactionLabels = ['Gostariam de confrontar', 'Desabafam com outros colegas', 'Reportam ao RH/Gestão', 'Tornam-se passivo-agressivos'];
+        new Chart(document.getElementById('reactionsChart'), {
+            type: 'bar',
+            data: {
+                labels: reactionLabels.map(label => wrapLabel(label, 20)),
+                datasets: [{
+                    label: '% dos Funcionários',
+                    data: [41, 12, 12, 9],
+                     backgroundColor: [
+                        chartPalette.blue,
+                        chartPalette.yellow,
+                        chartPalette.gray,
+                        chartPalette.orange
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                indexAxis: 'y',
+                 plugins: { ...defaultChartOptions.plugins, legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: '#111111' }, beginAtZero: true, max: 50, grid: { display: false } },
+                    y: { ticks: { color: '#111111' }, grid: { display: false } }
+                }
+            }
+        });
+
+        const consequencesLabels = ['Aumento do estresse', 'Atrasos ou falhas em projetos', 'Baixa do moral da equipe'];
+        new Chart(document.getElementById('consequencesChart'), {
+            type: 'bar',
+            data: {
+                labels: consequencesLabels.map(label => wrapLabel(label, 20)),
+                datasets: [{
+                    label: '% dos Afetados',
+                    data: [52, 44, 31],
+                    backgroundColor: [
+                        chartPalette.red,
+                        chartPalette.orange,
+                        chartPalette.yellow
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                indexAxis: 'y',
+                plugins: { ...defaultChartOptions.plugins, legend: { display: false } },
+                scales: {
+                    x: { ticks: { color: '#111111' }, beginAtZero: true, max: 60, grid: { display: false } },
+                    y: { ticks: { color: '#111111' }, grid: { display: false } }
+                }
+            }
+        });
+
+        new Chart(document.getElementById('employeeSilenceChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Incapazes de se expressar', 'Expressam-se livremente'],
+                datasets: [{
+                    label: '% de Colaboradores',
+                    data: [85, 15],
+                    backgroundColor: [
+                        chartPalette.darkRed,
+                        chartPalette.gray
+                    ],
+                    borderColor: '#EDEDED',
+                    borderWidth: 4
+                }]
+            },
+            options: { ...defaultChartOptions }
+        });
+    </script>
+</body>
+</html>

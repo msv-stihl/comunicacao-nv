@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Comunicação Não Violenta</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="title-screen" class="screen active">
+        <div class="container">
+            <h1>Comunicação Não Violenta</h1>
+            <br>
+            <br>
+            <button id="start-btn" class="btn-primary">Iniciar Quiz</button>
+        </div>
+    </div>
+
+    <div id="quiz-screen" class="screen">
+        <div class="container">
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="current-question">1</span> de 8
+            </div>
+            <div id="question-container">
+                <h2 id="situation-title">Situação 1</h2>
+                <div id="options-container">
+                    <button class="option-btn" data-correct="false"></button>
+                    <button class="option-btn" data-correct="true"></button>
+                </div>
+            </div>
+            <div id="feedback" class="feedback hidden">
+                <p id="feedback-text"></p>
+                <div class="action-buttons">
+                    <button id="next-btn" class="btn-primary">Próxima Situação</button>
+                    <button id="end-btn" class="btn-secondary">Encerrar Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="results-screen" class="screen">
+        <div class="container">
+            <h2>Resultados</h2>
+            <div class="chart-container">
+                <canvas id="resultsChart"></canvas>
+            </div>
+            <div id="score-text"></div>
+            <div class="results-buttons">
+                <button id="infograph-btn" class="btn-secondary">Ver Infográfico</button>
+                <button id="restart-btn" class="btn-primary">Refazer Quiz</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
