@@ -1,4 +1,3 @@
-// Dados das situações do quiz
 const situations = [
     {
         id: 1,
@@ -48,10 +47,6 @@ const situations = [
         options: [
             {
                 text: "Você não pensa? Vai esperar cair pra aprender a usar a escada direito?",
-                correct: false
-            },
-            {
-                text: "Quase caiu, hein! Mas tá tudo certo… escada sempre dá um susto.",
                 correct: false
             },
             {
@@ -194,9 +189,9 @@ function selectOption(button, isCorrect) {
     button.classList.add('selected');
     if (isCorrect) {
         score++;
-        feedbackText.textContent = 'Resposta correta! Essa é uma forma de comunicação não violenta.';
+        feedbackText.textContent = 'Você escolheu uma forma de comunicação não violenta.';
     } else {
-        feedbackText.textContent = 'Resposta incorreta. A comunicação não violenta busca ser assertiva sem ser agressiva.';
+        feedbackText.textContent = 'Você escolheu uma forma de comunicação agressiva.';
     }
     feedback.classList.remove('hidden');  
     if (currentSituation === situations.length - 1) {
@@ -204,7 +199,7 @@ function selectOption(button, isCorrect) {
         endBtn.textContent = 'Ver Resultados';
     } else {
         nextBtn.style.display = 'inline-block';
-        endBtn.textContent = 'Encerrar Quiz';
+        endBtn.textContent = 'Encerrar';
     }
 }
 
@@ -221,7 +216,7 @@ function showResults() {
     quizScreen.classList.remove('active');
     resultsScreen.classList.add('active');
     const percentage = totalAnswered > 0 ? Math.round((score / totalAnswered) * 100) : 0;
-    scoreText.textContent = `Vocês acertaram ${score} de ${totalAnswered} situações (${percentage}%)`;
+    scoreText.textContent = `Vocês escolheram ${score} de ${totalAnswered} respostas não violentas (${percentage}%)`;
     createChart(percentage);
 }
 
